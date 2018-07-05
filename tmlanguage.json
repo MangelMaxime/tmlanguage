@@ -98,6 +98,10 @@
           "description": "these keys allow matches which span several lines and must both be mutually exclusive with the match key. Each is a regular expression pattern. begin is the pattern that starts the block and end is the pattern which ends the block. Captures from the begin pattern can be referenced in the end pattern by using normal regular expression back-references. This is often used with here-docs. A begin/end rule can have nested patterns using the patterns key.",
           "type": "string"
         },
+        "while": {
+          "description": "these keys allow matches which span several lines and must both be mutually exclusive with the match key. Each is a regular expression pattern. begin is the pattern that starts the block and end is the pattern which ends the block. Captures from the begin pattern can be referenced in the end pattern by using normal regular expression back-references. This is often used with here-docs. A begin/end rule can have nested patterns using the patterns key.",
+          "type": "string"
+        }
         "end": {
           "description": "these keys allow matches which span several lines and must both be mutually exclusive with the match key. Each is a regular expression pattern. begin is the pattern that starts the block and end is the pattern which ends the block. Captures from the begin pattern can be referenced in the end pattern by using normal regular expression back-references. This is often used with here-docs. A begin/end rule can have nested patterns using the patterns key.",
           "type": "string"
@@ -122,7 +126,7 @@
         }
       },
       "dependencies": {
-        "begin": ["end"],
+        "begin": ["while", "end"],
         "end": ["begin"],
         "contentName": ["begin","end"],
         "beginCaptures": ["begin","end"],
